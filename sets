@@ -1,0 +1,108 @@
+// Creating a set using the setOf function
+
+fun main() {
+    val set = setOf('A', 'B', 'C')
+    println(set)
+}
+
+// the above result is  Set<T> where T is the type of element in this set. it has a set with Char values, the type is Set<Char>
+
+fun main() {
+    val set: Set<Char> = setOf('A', 'B', 'C')
+    println(set)
+    val ints: Set<Long> = setOf(1L, 2L, 3L)
+    println(ints)
+}
+
+// adding elements to sets by using the + sign
+
+fun main() {
+    val set = setOf('A', 'B')
+    println(set + 'C')
+    println(set + setOf('C', 'D'))
+    println(setOf('Z') + set)
+}
+
+//establishing the size of a set using the size property
+
+fun main() {
+    val set = setOf('A', 'B', 'C')
+    println(set.size)
+}
+
+// checking if a set is empty using the 'isEmpty' method
+
+fun main() {
+    val set = setOf('A', 'B', 'C')
+    println(set.size == 0)
+    println(set.isEmpty())
+
+    val empty: Set<Int> = setOf()
+    println(empty.size == 0)
+    println(empty.isEmpty())
+}
+
+//Elements in set are unique... elements that are already in set are not added their addition is ignored.
+
+fun main() {
+    val set = setOf('A', 'B', 'C')
+    println(set + 'B')
+    println(set + setOf('B', 'D'))
+
+    val list =  listOf('A', 'B', 'C')
+    println(list + 'B')
+    println(list + listOf('B', 'D'))
+}
+
+//if you duplicate arguments in the setOf function, the second argument will be ignored
+
+fun main() {
+    val set = setOf('A', 'B', 'A')
+    println(set)
+}
+
+// two elements are duplicated if they are equal, so if == between them returns true
+
+class User(val name: String )
+
+fun main() {
+    val set = setOf(User("A"), User("A"))
+    println(set + User("A"))
+}
+
+// Checking if a set contains an element you can use contains method or in operator
+
+fun main() {
+    val letters = setOf('A', 'B', 'C')
+    println(set.contains('A'))
+    println(set.contains('Z'))
+    println('A' in set)
+    println('Z' in set)
+}
+
+// checking if the set does not contain the element, by using !in operator
+
+fun main() {
+    val letters = setOf("A", "B", "C")
+    println("A" !in list)
+    println("Z" !in list)
+}
+
+// iterating over sets using a for-loop
+
+fun main() {
+    val letters = setOf('A', 'B', 'C')
+    for (letter in letters) {
+        print(letter)
+    }
+}
+
+// using mutable sets 'mutableOf'
+
+fun main() {
+    val set = mutableSetOf('A', 'B')
+    set.add('C')
+    println(set)
+    set.remove('B')
+    println(set)
+}
